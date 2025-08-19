@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>India Election 2024 Dashboard</title>
+  
+  <style>
+    /* Base styles */
+    body {
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      background: #f4f6f9;
+      margin: 0;
+      padding: 0;
+      line-height: 1.7;
+      color: #333;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 40px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 10px 25px;
+      background: linear-gradient(90deg, #2563eb, #1e40af);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn:hover {
+      background: linear-gradient(90deg, #1d4ed8, #1e3a8a);
+      transform: translateY(-2px);
+    }
+
+    /* Headings */
+    h1 {
+      font-size: 2.4rem;
+      margin-bottom: 10px;
+      color: #1e3a8a;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      margin-top: 40px;
+      margin-bottom: 15px;
+      color: #2563eb;
+      border-left: 4px solid #2563eb;
+      padding-left: 10px;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    /* Project image styling */
+    .project-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      margin: 25px 0;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Callout styles for 🎯 or 🔍 etc. */
+    .highlight {
+      background: #eff6ff;
+      border-left: 5px solid #2563eb;
+      padding: 12px 18px;
+      margin: 20px 0;
+      border-radius: 8px;
+      font-style: italic;
+    }
+
+    .footer {
+        text-align: center;
+        padding: 15px 0;
+        margin-top: 40px;
+        background: #f8f9fa;
+        font-size: 0.9rem;
+        color: #666;
+        border-top: 1px solid #ddd;
+        }
+    .footer strong {
+        color: #333;
+    }
+
+
+    /* Mobile tweaks */
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+      h2 {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="index.html" class="btn">⬅ Back</a>
+
+    <h1>India Election 2024 Dashboard</h1>
+    <h2>Power BI Project</h2>
+
+    <p>
+      Below image shows the India General Election Results Analysis - 2024 Landing Page by which user can navigate through different types of Analysis by pressing <b>CTRL + Click</b> on individual icons.
+    </p>
+    
+    <img src="images/Election/Landing.png" alt="Landing Page" class="project-image">
+
+    <h2>Overview Analysis – Total 543 Seats</h2>
+    <p>
+      A comprehensive overview of how all 543 parliamentary seats are distributed among the major alliances and other parties.
+    </p>
+
+    <div class="highlight">🔍 Key Highlights</div>
+    <ul>
+      <li><b>Seat Share by Alliance:</b> NDA Alliance, I.N.D.I.A. Alliance, and Other Parties.</li>
+      <li><b>Percentage & Numbers:</b> Share in percentage and actual seat count.</li>
+      <li><b>Party-wise Breakdown:</b> Seat details with party logos for quick recognition.</li>
+    </ul>
+
+    <div class="highlight">🎯 Purpose: Provides a high-level snapshot of election results, highlighting dominance and distribution.</div>
+
+    <img src="images/Election/Overview.png" alt="Overview Analysis" class="project-image">
+
+    <h2>State Demographics Analysis</h2>
+    <p>
+      Features three dynamic maps, each highlighting a different aspect of the election.
+    </p>
+
+    <ul>
+      <li><b>Seat Distribution Map</b> – Shows parliamentary/assembly seats per state, alliance breakdown, and winning alliance.</li>
+      <li><b>Alliance Bubble Map</b> – Visualizes winning candidates with bubbles by alliance (🟠 NDA / 🔵 I.N.D.I.A.).</li>
+      <li><b>State-wise Alliance Map</b> – Colors each state by the dominant alliance (🟧 NDA / 🟦 I.N.D.I.A.).</li>
+    </ul>
+
+    <img src="images/Election/State.png" alt="State Demographics" class="project-image">
+
+    <h2>Political Landscape by State</h2>
+    <p>
+      State-level deep dive with a dropdown menu to select states. Displays party-wise results, alliances, and a donut chart for seat share.
+    </p>
+
+    <div class="highlight">🎯 Purpose: Visual storytelling that turns raw election numbers into clear insights.</div>
+
+    <img src="images/Election/political.png" alt="Political Landscape" class="project-image">
+
+    <h2>Constituency Analysis</h2>
+    <p>
+      Detailed breakdown of election results for any chosen constituency, including total votes, EVM vs Postal votes, and candidates.
+    </p>
+    <ul>
+      <li><b>Winner’s Card</b> – Name, party, total votes, and share.</li>
+      <li><b>Runner-Up’s Card</b> – Same details for comparison.</li>
+      <li><b>Second Runner-Up’s Card</b> – Highlights third-place candidate.</li>
+    </ul>
+
+    <div class="highlight">🎯 Purpose: Helps identify competitiveness, margins, and detailed performance at constituency level.</div>
+
+    <img src="images/Election/Constituency.png" alt="Constituency Analysis" class="project-image">
+  </div>
+
+  <!-- Footer -->
+    <footer class="footer">
+    <p>&copy; 2025 Designed & Developed by <strong>Dizeeta Gudhka</strong></p>
+    </footer>
+
+</body>
+</html>

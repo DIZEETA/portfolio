@@ -1,0 +1,444 @@
+/* ========== RESET + BASE ========== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: #f4f4f4;
+  color: #333;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 1100px;
+  padding: 1rem;
+}
+
+/* ========== HEADER ========== */
+header { text-align: center; margin-bottom: 2rem; }
+
+header .profile-pic {
+  width: 140px; height: 140px;
+  border-radius: 50%; object-fit: cover;
+  border: 4px solid #fff; margin: 0 auto 1rem;
+}
+
+header nav {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column; /* stack on mobile */
+  gap: 10px;
+}
+
+header nav a {
+  color: #333; text-decoration: none;
+  font-weight: bold; font-size: 14px;
+}
+
+/* ========== SOCIAL LINKS ========== */
+.social-links {
+  margin: 20px 0;
+  display: flex; justify-content: center;
+  gap: 12px; flex-wrap: wrap;
+}
+
+.social-links a {
+  width: 50px; height: 50px;
+  background: #e0e0e0;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.social-links a img { width: 25px; height: 25px; }
+
+/* ========== ABOUT ========== */
+.about-description {
+  text-align: center; font-size: 14px;
+  margin: 20px auto; padding: 0 10px; color: #444;
+}
+
+/* ========== SKILLS ========== */
+.skills-logos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  gap: 20px; margin: 30px 0;
+}
+
+.skill-item { text-align: center; }
+
+.skill-item img {
+  width: 60px; height: 60px;
+  object-fit: contain; border-radius: 12px;
+  background: #f3f3f3; padding: 10px;
+  transition: transform 0.3s ease;
+}
+.skill-item img:hover { transform: scale(1.1); }
+.skill-caption { font-size: 12px; margin-top: 8px; color: #444; }
+
+/* ========== PROJECTS ========== */
+.project-card {
+  background: #fff; border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 15px; margin: 25px 0;
+}
+
+.project-content {
+  display: flex;
+  flex-direction: column; /* stack by default */
+  gap: 15px; text-align: center;
+}
+
+.project-image img {
+  width: 100%; max-width: 320px; height: auto;
+  border-radius: 12px; margin: 0 auto;
+}
+
+.view-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #333;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px; font-weight: bold;
+}
+.view-button:hover { background: #555; }
+
+/* ========== CONTACT ========== */
+.contact-container {
+  background: #f9fafc;
+  border-radius: 12px;
+  padding: 15px;
+  margin: 30px 0;
+  text-align: center;
+}
+
+.contact-container input,
+.contact-container textarea {
+  width: 100%; padding: 10px;
+  border: 1px solid #ccc; border-radius: 8px;
+  font-size: 14px; margin-bottom: 10px;
+}
+
+.contact-container button {
+  width: 100%; padding: 12px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  border: none; border-radius: 8px;
+  color: white; font-size: 14px; cursor: pointer;
+}
+.contact-container button:hover { background: #5012a2; }
+
+/* ========== FOOTER ========== */
+footer {
+  text-align: center;
+  padding: 10px; font-size: 12px; color: #666;
+  border-top: 1px solid #ddd;
+}
+
+/* ========== MEDIA QUERIES ========== */
+/* Tablet */
+@media (min-width: 600px) {
+  header nav { flex-direction: row; justify-content: center; }
+  header nav a { font-size: 16px; margin: 0 8px; }
+
+  .about-description { font-size: 16px; max-width: 600px; }
+
+  .project-content {
+    flex-direction: row; align-items: center; text-align: left;
+  }
+  .project-image { flex: 0 0 40%; }
+  .project-description { flex: 1; }
+}
+
+/* Desktop */
+@media (min-width: 992px) {
+  body { padding: 40px; }
+  .card { padding: 2rem; }
+
+  header .profile-pic { width: 220px; height: 220px; }
+  header nav a { font-size: 18px; }
+
+  .skills-logos {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 30px;
+  }
+  .skill-item img { width: 70px; height: 70px; }
+
+  .project-content { gap: 30px; }
+  .contact-container { max-width: 700px; padding: 30px; }
+}
+/* Hide nav & show hamburger on mobile */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #333;
+  margin-top: 10px;
+}
+
+/* Mobile Styles */
+@media (max-width: 600px) {
+  .navbar {
+    max-height: 0;             /* collapsed */
+    overflow: hidden;          /* hide content */
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    transition: max-height 0.4s ease-in-out; /* smooth slide */
+  }
+
+  .navbar.active {
+    max-height: 300px; /* enough to show all links */
+  }
+
+  .menu-toggle {
+    display: block;
+    margin: 10px auto;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.down-arrow img {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  margin: 10px auto;
+  display: block;
+  animation: bounce 1.5s infinite;
+}
+
+/* Little bounce animation for arrows */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(8px); }
+  60% { transform: translateY(4px); }
+}
+
+.resume-button a {
+  display: inline-block;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+.resume-button a:hover {
+  background: #5012a2;
+}
+/* ==== Project Card Hover Effects ==== */
+.project-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  margin: 25px 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Lift up card on hover */
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Smooth image zoom inside project */
+.project-card .project-image img {
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.05);
+}
+
+/* Glow effect for View Button */
+.view-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #333;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.view-button:hover {
+  background: #2575fc;
+  box-shadow: 0 4px 12px rgba(37, 117, 252, 0.4);
+  transform: translateY(-2px);
+}
+/* Project title styling */
+.project-card h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.project-card h3::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  margin-top: 6px;
+  border-radius: 2px;
+}
+
+/* Project description styling */
+.project-card .project-description {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+/* ==== Section Titles (Featured Projects, About Me, Skills, Thanks, etc.) ==== */
+section h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+/* Optional underline style for section titles */
+section h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* ==== Center align content inside sections ==== */
+#about, 
+#skills, 
+#projects, 
+#contact {
+  text-align: center;
+}
+
+/* Adjust skill items to be centered nicely */
+.skill-item {
+  display: inline-block;
+  margin: 10px;
+  text-align: center;
+}
+
+/* Center the contact-container */
+#contact {
+  display: flex;
+  justify-content: center; /* horizontal centering */
+  align-items: center;     /* vertical centering if needed */
+  flex-direction: column;
+}
+
+.contact-container {
+  width: 100%;
+  max-width: 600px;  /* keep it nicely sized */
+  margin: 0 auto;    /* ensure auto centering */
+  text-align: center;
+}
+
+
+
+/* Default desktop styling */
+.project-card {
+  margin-bottom: 40px;
+}
+
+.project-content {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.project-card.alternate .project-content {
+  flex-direction: row-reverse; /* alternate layout only on desktop */
+}
+
+.project-title {
+  margin-bottom: 12px;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+/* ✅ Mobile fix */
+/* New and improved Mobile fix for projects */
+@media (max-width: 768px) {
+  .project-content {
+    flex-direction: column; /* Force all projects to stack vertically */
+    text-align: center;
+  }
+  
+  .project-card.alternate .project-content {
+    flex-direction: column; /* Explicitly ensure alternate projects also stack */
+  }
+
+  .project-image {
+    order: 1; /* Image always on top */
+  }
+
+  .project-description {
+    order: 2; /* Description below the image */
+  }
+
+  /* You might need to add a rule for the project-title class as well if it's separate */
+  .project-title {
+    order: 1.5; /* This is an example, you would use 2 or 3 depending on your desired order */
+  }
+
+}
+/* Default desktop styling */
+.project-card {
+  margin-bottom: 40px;
+}
+
+.project-content {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.project-card.alternate .project-content {
+  flex-direction: row-reverse; /* alternate layout only on desktop */
+}
+
+.project-title {
+  margin-bottom: 12px;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+/* ✅ Mobile fix */
+@media (max-width: 768px) {
+  .project-content,
+  .project-card.alternate .project-content {
+    flex-direction: column; /* stack vertically */
+    text-align: center;
+  }
+
+  /* Force order for mobile */
+  .project-image { order: 1; }
+  .project-title { order: 2; margin-top: 12px; }
+  .project-description { order: 3; margin-top: 8px; }
+}

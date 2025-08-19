@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pizza Sales — Case Study</title>
+  <style>
+    :root {
+      --bg:#0f1720; --card:#0b1220; --accent:#ff6600; --muted:#9aa4b2; --glass: rgba(255,255,255,0.03);
+      --maxw:1100px;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    body {
+      font-family: Inter, system-ui, -apple-system, Roboto, 'Segoe UI', Arial;
+      margin:0;
+      background:var(--bg);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      line-height:1.6;
+    }
+    .wrap {
+      max-width:1400px;
+      margin:28px auto;
+      padding:16px;
+    }
+    header{display:flex; gap:20px; align-items:center; flex-wrap:wrap}
+    header .title{flex:1; min-width:250px}
+    h1{margin:0; font-size:24px}
+    p.lead{color:var(--muted); margin:6px 0 0}
+
+    .hero{display:grid; grid-template-columns:1fr 360px; gap:20px; margin-top:18px}
+    .card {
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding:18px; border-radius:12px;
+      box-shadow: 0 6px 30px rgba(3,6,10,0.6);
+    }
+
+    .exec h2{margin:0 0 8px}
+    .exec p{color:var(--muted); margin:0 0 10px}
+    .kpi-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:10px}
+    .kpi{background:var(--glass); padding:12px; border-radius:8px; text-align:center}
+    .kpi .num{font-size:18px; font-weight:700; color:#fff}
+    .kpi .lbl{font-size:12px; color:var(--muted)}
+
+    /* gallery */
+    .gallery{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; margin-top:20px}
+    .figure{background:var(--card); padding:12px; border-radius:10px}
+    .figure img{width:100%; height:auto; border-radius:8px; cursor:pointer; display:block}
+    .figure h3{margin:10px 0 6px; font-size:15px}
+    .figure p{margin:0; color:var(--muted); font-size:13px}
+    .gallery .full-width{grid-column:1 / -1}
+
+    /* recommendations */
+    .rec{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+    .rec .pill{background:#071420; padding:10px 14px; border-radius:999px; color:var(--muted); font-size:13px}
+
+    footer{margin-top:22px; text-align:center; color:var(--muted); font-size:13px}
+
+    /* lightbox modal */
+    .modal{position:fixed; inset:0; display:none; align-items:center; justify-content:center; background:rgba(3,6,10,0.7); z-index:99}
+    .modal.open{display:flex}
+    .modal img{max-width:94%; max-height:86%; border-radius:10px; box-shadow:0 30px 80px rgba(2,4,8,0.8)}
+    .close-btn{position:fixed; right:20px; top:15px; background:var(--card); border-radius:8px; padding:8px 12px; cursor:pointer; color:var(--muted); font-size:14px}
+
+    /* button */
+    .btn {
+      display:inline-block;
+      padding:10px 20px;
+      background-color:#4CAF50;
+      color:white;
+      border:none;
+      border-radius:25px;
+      text-decoration:none;
+      font-size:15px;
+      cursor:pointer;
+      transition:background 0.3s;
+    }
+    .btn:hover{background-color:#45a049}
+
+    /* responsive tweaks */
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr}
+    }
+    @media (max-width: 600px){
+      h1{font-size:20px}
+      .btn{padding:8px 16px; font-size:14px}
+      .figure h3{font-size:14px}
+      .figure p{font-size:12px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="title">
+        <a href="index.html" class="btn">⬅ Back</a>
+        <h1>PIZZA SALES — Data Story & Case Study</h1>
+        <h3>Tools Used - SQL | Excel</h3>
+        <p class="lead">Shows the overall business performance with five core metrics:</p>
+      </div>
+      <div style="text-align:right; flex:0 0 auto">
+        <small style="color:var(--muted)">Author: Dizeeta Gudhka</small>
+      </div>
+    </header>
+
+    <div class="hero">
+      <div class="card exec">
+        <h2>Executive Summary</h2>
+        <p>
+          This analysis turns raw sales data into operational recommendations. Over the reporting period the pizzeria generated <strong>$65,160</strong> from <strong>1,685 orders</strong>, with customers ordering an average of <strong>2.35 pizzas</strong> per order. Key peaks occur on Fridays and Saturdays and during lunch (12 PM) and dinner (5–6 PM). Classic pizzas and large sizes drive the most revenue.
+        </p>
+
+        <div style="margin-top:12px">
+          <h3 style="margin:0 0 8px">Topline KPIs</h3>
+          <div class="kpi-grid">
+            <div class="kpi"><div class="num">$65,160</div><div class="lbl">Total Revenue</div></div>
+            <div class="kpi"><div class="num">$38.67</div><div class="lbl">Average Order Value</div></div>
+            <div class="kpi"><div class="num">3,961</div><div class="lbl">Total Pizzas Sold</div></div>
+            <div class="kpi"><div class="num">1,685</div><div class="lbl">Total Orders</div></div>
+            <div class="kpi"><div class="num">2.35</div><div class="lbl">Avg Pizzas / Order</div></div>
+          </div>
+        </div>
+
+        <div style="margin-top:14px">
+          <h3 style="margin:0 0 8px">Recommendations</h3>
+          <div class="rec">
+            <div class="pill">Weekend promotions (Fri–Sat evenings)</div>
+            <div class="pill">Push large-size combos</div>
+            <div class="pill">Highlight Pepperoni & Chicken pizzas</div>
+            <div class="pill">Reevaluate/market low-performing items</div>
+          </div>
+          <h3>Click on the below images to Zoom out.</h3>
+        </div>
+      </div>
+
+      <aside class="card" style="height:100%">
+        <h3 style="margin-top:0">Dashboard Details</h3>
+        <p style="color:var(--muted);font-size:13px">
+            This section showcases the visual analysis of the pizza sales case study.  
+            Each chart and KPI graphic is saved as a PNG in the project folder for smooth display.  
+            The visuals are arranged so you can click to enlarge and view details clearly.
+        </p>
+        <ul style="color:var(--muted); font-size:13px">
+            <li>KPI Overview</li>
+            <li>Daily & Hourly Sales Trends</li>
+            <li>Sales by Category & Size</li>
+            <li>Top & Bottom Selling Pizzas</li>
+        </ul>
+        <p style="color:var(--muted); font-size:13px">
+            All numbers and insights are based on processed sales data and can be updated to reflect different periods or datasets.
+        </p>
+        </aside>
+
+        
+    <section class="gallery">
+      <figure class="figure">
+        <img data-src="images/pizza/KPI.png" alt="KPI Overview" id="img-kpi">
+        <h3>KPI Overview</h3>
+        <p>At a glance: total revenue, average order value, total pizzas sold, total orders and average pizzas per order. This section communicates business scale and customer purchasing behavior.</p>
+      </figure>
+
+      <figure class="figure">
+        <img data-src="images/pizza/Chart_1_Dashboard.png" alt="Daily Sales Trend" id="img-1">
+        <h3>Daily Sales Trend</h3>
+        <p>Friday is the clear peak day. This indicates higher weekend demand and opportunity for targeted weekend marketing.</p>
+      </figure>
+
+      <figure class="figure">
+        <img data-src="images/pizza/Chart_2_Dashboard.png" alt="Hourly Sales Trend" id="img-2">
+        <h3>Hourly Sales Trend</h3>
+        <p>Two daily peaks at lunchtime (~12 PM) and dinnertime (~5–6 PM). Low activity after 10 PM — helps inform staffing and delivery planning.</p>
+      </figure>
+
+      <figure class="figure">
+        <img data-src="images/pizza/Chart_5_Dashboard.png" alt="Sales by Category" id="img-5">
+        <h3>Sales by Category</h3>
+        <p>Classic category leads the chart. Consider limited-time offers for other categories to balance sales mix.</p>
+      </figure>
+
+      <figure class="figure">
+        <img data-src="images/pizza/Chart_4_Dashboard.png" alt="Sales by Size" id="img-6">
+        <h3>Sales by Size</h3>
+        <p>Large pizzas contribute the highest revenue. Stock and promotions should favor larger sizes and family bundles.</p>
+      </figure>
+
+      <figure class="figure">
+        <img data-src="images/pizza/Chart_3_Dashboard.png" alt="Total Pizzas by Category" id="img-7">
+        <h3>Total Pizzas by Category</h3>
+        <p>Confirming the Classic category's dominance — a dependable revenue driver for the menu.</p>
+      </figure>
+
+      <figure class="figure">
+        <img data-src="images/pizza/Chart_6_Dashboard.png" alt="Top 5 Best Sellers" id="img-8">
+        <h3>Top 5 Best Sellers</h3>
+        <p>Pepperoni, California Chicken, and Hawaiian are the top sellers; use as hero items in promotions.</p>
+      </figure>
+
+      <figure class="figure">
+        <img data-src="images/pizza/Chart_7_Dashboard.png" alt="Bottom 5 Worst Sellers" id="img-9">
+        <h3>Bottom 5 Worst Sellers</h3>
+        <p>Brie Carre and others underperform. Consider recipe changes, pricing, or removing them from the menu.</p>
+      </figure>
+
+        <figure class="figure full-width">
+        <img data-src="images/pizza/pizza.png" alt="Complete Dashboard Overview">
+        <h3>Complete Dashboard View</h3>
+        <p>
+        A consolidated view of all KPIs and charts in one place, providing a quick snapshot of business performance.
+        Click to enlarge for better clarity.
+        </p>
+    </figure>
+
+    </section>
+
+    <!-- <footer>
+      <p>Use this page as part of your portfolio. Replace the sample KPI numbers and text to reflect your full methodology and SQL queries.</p>
+    </footer> -->
+
+
+    <!-- Rest of your content unchanged -->
+    <!-- ... (hero, KPIs, recommendations, gallery, modal, etc.) -->
+
+  </div>
+
+  <!-- JS (unchanged) -->
+  <div class="modal" id="modal"><button class="close-btn" id="closeBtn">Close ✕</button><img id="modalImg" src="" alt=""></div>
+  <script>
+    const imgs=document.querySelectorAll('img[data-src]');
+    imgs.forEach(img=>{
+      const src=img.getAttribute('data-src');
+      img.src=src;
+      img.addEventListener('error',()=>{img.style.opacity=0.24; img.title='Image not found: '+src});
+      img.addEventListener('click',()=>openModal(src,img.alt));
+    });
+    const modal=document.getElementById('modal');
+    const modalImg=document.getElementById('modalImg');
+    const closeBtn=document.getElementById('closeBtn');
+    function openModal(src,alt){modal.classList.add('open'); modalImg.src=src; modalImg.alt=alt}
+    function closeModal(){modal.classList.remove('open'); modalImg.src=''}
+    closeBtn.addEventListener('click',closeModal);
+    modal.addEventListener('click',(e)=>{if(e.target===modal) closeModal()});
+  </script>
+</body>
+</html>
