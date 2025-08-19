@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dizeeta Gudhka | Portfolio</title>
+  <meta name="description" content="Portfolio of Dizeeta Gudhka — Data Analyst skilled in Tableau, Power BI, SQL, Excel, and Python. Explore projects and dashboards." />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- EmailJS Library -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function () {
+      emailjs.init("pv3lZdUdU5-2pqGz2"); // Your EmailJS Public Key
+    })();
+  </script>
+</head>
+<body>
+  <div class="card">
+    <!-- Header Section -->
+    <header>
+      <img src="images/profile.jpg" alt="Dizeeta Gudhka" class="profile-pic" />
+      <h1>Dizeeta Gudhka</h1>
+      <h2>Data Analyst</h2>
+
+      <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
+
+      <!-- Navigation -->
+      <nav class="navbar">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <!-- Social Links -->
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/your-linkedin-id" target="_blank">
+          <img src="images/linkedin.png" alt="LinkedIn" />
+        </a>
+        <a href="https://public.tableau.com/app/profile/dizeeta.gudhka/vizzes" target="_blank">
+          <img src="images/tableau.png" alt="Tableau" />
+        </a>
+        <a href="https://github.com/DIZEETA" target="_blank">
+          <img src="images/github.png" alt="GitHub" />
+        </a>
+        <a href="#" onclick="openEmail(event)">
+          <img src="images/email.png" alt="Email" />
+        </a>
+
+
+      </div>
+
+      <!-- Resume Button -->
+      <div class="resume-button">
+        <a href="resume.pdf" target="_blank">VIEW RESUME</a>
+      </div>
+    </header>
+
+    <hr class="section-divider" />
+
+    <!-- About Me Section -->
+    <div class="down-arrow">
+      <img src="images/down-arrow.png" alt="Scroll Down" class="scroll-btn" data-target="#about" />
+    </div>
+    <h2 id="about" class="about-me-heading">About Me</h2>
+    <div class="about-underline"></div>
+    <p class="about-description">
+      I'm Dizeeta Gudhka, a detail-driven Data Analyst with a passion for turning raw numbers into powerful insights.
+      With a strong foundation in tools like Tableau, Excel, and SQL, I specialize in making data tell stories that drive decisions.
+      I believe every dataset has a hidden narrative—my job is to uncover it and turn it into action.
+      Let’s build something intelligent, impactful, and truly data-driven together.
+    </p>
+
+    <hr class="section-divider" />
+
+    <!-- Skills Section -->
+    <div class="down-arrow">
+      <img src="images/down-arrow.png" alt="Scroll Down" class="scroll-btn" data-target="#skills" />
+    </div>
+    <h2 id="skills" class="skills-heading">Skills</h2>
+    <div class="skills-underline"></div>
+    <div class="skills-logos">
+      <div class="skill-item">
+        <img src="images/excel.png" alt="Excel" title="Excel" />
+        <p class="skill-caption">Excel – Data cleaning, dashboards & formulas</p>
+      </div>
+      <div class="skill-item">
+        <img src="images/powerbi.png" alt="Power BI" title="Power BI" />
+        <p class="skill-caption">Power BI – Interactive business reporting</p>
+      </div>
+      <div class="skill-item">
+        <img src="images/tableau_coloured.png" alt="Tableau" title="Tableau" />
+        <p class="skill-caption">Tableau – Visual storytelling with data</p>
+      </div>
+      <div class="skill-item">
+        <img src="images/sql.png" alt="SQL" title="SQL" />
+        <p class="skill-caption">SQL – Writing queries to extract insights</p>
+      </div>
+      <div class="skill-item">
+        <img src="images/python.png" alt="Python" title="Python" />
+        <p class="skill-caption">Python – Automating, analyzing, and modeling</p>
+      </div>
+    </div>
+
+    <hr class="section-divider" />
+
+    <!-- Projects Section -->
+    <div class="down-arrow">
+      <img src="images/down-arrow.png" alt="Scroll Down" class="scroll-btn" data-target="#projects" />
+    </div>
+    <h2 id="projects" class="about-me-heading">Featured Projects</h2>
+    <div class="about-underline"></div>
+
+    <!-- Project 1 -->
+<div class="project-card">
+  <div class="project-content">
+    <div class="project-image">
+      <img src="images/election-board.png" alt="India Election 2024 Dashboard" />
+    </div>
+    
+    <div class="project-description">
+      <h3 class="project-title">India Election 2024 Dashboard</h3>
+      <p>
+        Built a dynamic Power BI dashboard analyzing party-wise, state-wise, and constituency-wise results. Included comparisons of winning and runner-up candidates across all states with interactive visuals.
+      </p>
+      <a href="election_new.html" class="view-button">View Project</a>
+    </div>
+  </div>
+</div>
+
+<!-- Project 2 -->
+<div class="project-card alternate">
+  <div class="project-content">
+    <div class="project-image">
+      <img src="images/PizzaSS.png" alt="Pizza Store Project" />
+    </div>
+    
+    <div class="project-description">
+      <h3 class="project-title">🍕 Pizza Store Sales Analysis</h3>
+      <p>
+        A detailed sales analysis project for a fictional pizza store using SQL and Excel. Extracted and transformed data using SQL queries and built interactive dashboards in Excel to track sales trends, popular pizzas, and customer behavior.
+      </p>
+      <a href="pizaa_new.html" class="view-button">View Project</a>
+    </div>
+  </div>
+</div>
+
+<!-- Project 3 -->
+<div class="project-card">
+  <div class="project-content">
+    <div class="project-image">
+      <img src="images/blinkit.png" alt="Blinkit Sales &amp; Outlet Analysis" />
+    </div>
+    
+    <div class="project-description">
+      <h3 class="project-title">Blinkit Sales &amp; Outlet Analysis</h3>
+      <p>
+        This analysis enables Blinkit to optimize inventory planning, improve outlet performance, and target product categories effectively based on outlet characteristics and market demands.
+      </p>
+      <a href="blinkit_new.html" class="view-button">View Project</a>
+    </div>
+  </div>
+</div>
+
+<!-- Project 4 -->
+<div class="project-card alternate">
+  <div class="project-content">
+    <div class="project-image">
+      <img src="images/HR.png" alt="HR Analytics Project" />
+    </div>
+    
+    <div class="project-description">
+      <h3 class="project-title">HR Analytics Dashboard</h3>
+      <p>
+        This Dashboard empowers HR teams to pinpoint attrition hotspots, address workforce gaps, and make data-driven retention strategies to improve employee satisfaction and organizational stability.
+      </p>
+      <a href="hr_new.html" class="view-button">View Project</a>
+    </div>
+  </div>
+</div>
+
+
+
+    <hr class="section-divider" />
+
+    <!-- Thanks Section -->
+    <div class="down-arrow">
+      <img src="images/down-arrow.png" alt="Scroll Down" class="scroll-btn" data-target="#contact" />
+    </div>
+    <h2 class="about-me-heading" style="text-align: center;">Thanks!</h2>
+    <p style="text-align: center;">Thank you for taking your time to visit my portfolio!</p>
+    <p style="text-align: center;">If you'd like to chat about me joining your team, feel free to email me using the form below. 👇</p>
+
+    <hr class="section-divider" />
+
+    <!-- Contact Section -->
+    <div id="contact" class="contact-container">
+      <h2>Contact Me</h2>
+      <form id="contact-form">
+        <input type="text" id="name" name="from_name" placeholder="Your Name" required />
+        <input type="email" id="email" name="reply_to" placeholder="Your Email" required />
+        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <p id="form-status"></p>
+    </div>
+
+    <!-- Footer Socials -->
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/your-linkedin-id" target="_blank">
+        <img src="images/linkedin.png" alt="LinkedIn" />
+      </a>
+      <a href="https://public.tableau.com/app/profile/your-tableau-id" target="_blank">
+        <img src="images/tableau.png" alt="Tableau" />
+      </a>
+      <a href="https://github.com/your-github-id" target="_blank">
+        <img src="images/github.png" alt="GitHub" />
+      </a>
+      <a href="mailto:your@email.com">
+        <img src="images/email.png" alt="Email" />
+      </a>
+    </div>
+
+    <hr class="section-divider" />
+    <footer>
+      <p>&copy; 2025 Dizeeta Gudhka</p>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    function openEmail(event) {
+      event.preventDefault(); // stop normal link behavior
+
+      const gmailUrl = "https://mail.google.com/mail/?view=cm&fs=1&to=dizeetag@gmail.com&su=Hello%20Dizeeta&body=I%20am%20interested%20in%20your%20work.";
+      const mailtoUrl = "mailto:dizeetag@gmail.com?subject=Hello%20Dizeeta&body=I%20am%20interested%20in%20your%20work.";
+
+      // Try opening Gmail in a new tab
+      const win = window.open(gmailUrl, "_blank");
+
+      // If popup blocked or Gmail not available → fallback to mailto
+      if (!win || win.closed || typeof win.closed === "undefined") {
+        window.location.href = mailtoUrl;
+      }
+    }
+    document.addEventListener("DOMContentLoaded", function () {
+      // Menu toggle
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navbar = document.querySelector(".navbar");
+      menuToggle.addEventListener("click", () => {
+        navbar.classList.toggle("active");
+        menuToggle.textContent = navbar.classList.contains("active") ? "✖" : "☰";
+      });
+
+      // Contact form (EmailJS)
+      const form = document.getElementById("contact-form");
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        emailjs.sendForm("service_js1w8ah", "template_p9ytuqu", this).then(
+          function () {
+            document.getElementById("form-status").innerText = "✅ Message sent successfully!";
+            form.reset();
+          },
+          function (error) {
+            document.getElementById("form-status").innerText = "❌ Failed to send: " + JSON.stringify(error);
+          }
+        );
+      });
+
+      // Smooth scroll from down arrows
+      document.querySelectorAll(".scroll-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const target = document.querySelector(btn.dataset.target);
+          if (target) target.scrollIntoView({ behavior: "smooth" });
+        });
+      });
+    });
+  </script>
+</body>
+</html>
